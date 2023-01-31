@@ -1,0 +1,35 @@
+:root {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form {
+    width: 350px;
+    padding: 1rem 2rem;
+}
+
+.register-form__input {
+    width: 100%;
+}
+
+.register-form__title {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+}
+
+.register-form__button {
+    background-color: #FF171F !important;
+}
+
+.login-button {
+    margin-left: 1rem;
+}

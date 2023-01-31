@@ -1,0 +1,34 @@
+<p *ngIf="!hasCharacters">Agrega personajes a tu lista</p>
+<div *ngIf="hasCharacters">
+  <h1>Mi lista de personajes</h1>
+  <mat-divider></mat-divider>
+  <br />
+  <mat-form-field
+    class="login-form__input"
+    appearance="fill"
+    style="width: 100%"
+  >
+    <mat-label>Buscar un heroe</mat-label>
+    <input
+      matInput
+      (keyup.enter)="buscarHeroe(inputBuscarHeroe.value)"
+      #inputBuscarHeroe
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      [attr.aria-label]="'Heroe'"
+      (click)="buscarHeroe(inputBuscarHeroe.value)"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+  <br />
+
+  <div class="list-cards">
+    <div class="card" *ngFor="let heroe of heroes">
+      <!-- Tarjeta para mostrar heroes -->
+      <app-heroe-card [heroe]="heroe" [isMyList]="false"></app-heroe-card>
+    </div>
+  </div>
+</div>

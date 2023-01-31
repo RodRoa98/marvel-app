@@ -1,0 +1,29 @@
+:root {
+  padding: 2rem;
+}
+
+.list-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 1281px) {
+  .list-cards {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 1024px) {
+  .list-cards {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 767px) {
+  .list-cards {
+    justify-content: space-around;
+  }
+}

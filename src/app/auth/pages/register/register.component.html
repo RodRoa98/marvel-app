@@ -1,0 +1,42 @@
+<div class="container">
+    <form class="register-form" (ngSubmit)="register(registerForm)" #registerForm="ngForm">
+        <h2 class="register-form__title">Registro de usuario</h2>
+        <mat-form-field class="register-form__input" appearance="outline">
+            <mat-label>Nombres</mat-label>
+            <input matInput [type]="'text'" [(ngModel)]="registerUser.name" name="name" #nameInput>
+            <button type="button" mat-icon-button matSuffix [attr.aria-label]="'Nombres'">
+                <mat-icon></mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field class="register-form__input" appearance="outline">
+            <mat-label>Apellidos</mat-label>
+            <input matInput [type]="'text'" [(ngModel)]="registerUser.lastName" name="lastName" #lastNameInput>
+            <button type="button" mat-icon-button matSuffix [attr.aria-label]="'Apellidos'">
+                <mat-icon></mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field class="register-form__input" appearance="outline">
+            <mat-label>Clave</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="registerUser.password" name="password" #passwordInput>
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar clave'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field class="register-form__input" appearance="outline">
+            <mat-label>Telefono</mat-label>
+            <input matInput [type]="'tel'" [(ngModel)]="registerUser.phone" name="phone" #phoneInput>
+            <button type="button" mat-icon-button matSuffix [attr.aria-label]="'Telefono'">
+                <mat-icon></mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field class="register-form__input" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput [type]="'email'" [(ngModel)]="registerUser.email" name="email" #emailInput>
+            <button type="button" mat-icon-button matSuffix [attr.aria-label]="'Email'">
+                <mat-icon></mat-icon>
+            </button>
+        </mat-form-field>
+        <button type="submit" mat-raised-button class="register-form__button">Registrarse</button>
+        <a mat-raised-button [routerLink]="['/auth/login']" class="login-button">Ingresar</a>
+    </form>
+</div>

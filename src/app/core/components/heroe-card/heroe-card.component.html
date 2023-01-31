@@ -1,0 +1,24 @@
+<mat-card class="card">
+  <!-- Cabecera -->
+  <mat-card-header>
+    <mat-card-title>{{ heroe.name }}</mat-card-title>
+    <mat-card-subtitle>{{ heroe.id }}</mat-card-subtitle>
+  </mat-card-header>
+  <!-- Imagen -->
+  <img
+    [src]="heroe.image"
+    [alt]="heroe.name"
+    mat-card-image
+    class="heroe-image"
+  />
+  <!-- Descripcion -->
+  <mat-card-content>
+    <p class="heroe-description">{{ heroe.description }}</p>
+  </mat-card-content>
+  <!-- Botones -->
+  <mat-card-actions *ngIf="isMyList">
+    <a mat-button color="warn" (click)="addHeroeToList()">
+      Agregar a la lista
+    </a>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,75 @@
+mat-card {
+  margin-top: 20px;
+}
+
+.card {
+  max-width: calc(100vw / 5);
+}
+
+.card:hover {
+  animation-name: scale;
+  animation-duration: 3s;
+}
+
+.card:hover .heroe-image {
+  filter: grayscale(1);
+  animation-name: grayscale;
+  animation-duration: 3s;
+}
+
+.heroe-image {
+  filter: grayscale(0);
+}
+
+@keyframes grayscale {
+  from {
+    filter: grayscale(0);
+  }
+  to {
+    filter: grayscale(1);
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.heroe-image,
+.heroe-description {
+  width: 100%;
+}
+
+.heroe-description {
+  padding-top: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 1281px) {
+  .card {
+    max-width: calc(100vw / 4.5);
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    max-width: calc(100vw / 3.5);
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    max-width: calc(100vw / 2.5);
+  }
+}
+
+@media (max-width: 425px) {
+  .card {
+    max-width: calc(100vw / 1);
+  }
+}
